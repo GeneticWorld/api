@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "laboratories",
+    "dateExported": "2023-06-16T13:18:45.083Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4faabbc6-2952-493e-b735-d79555e068e8",
+            "colId": "e1763be0-4309-459d-b39e-e5ea5579718b",
+            "containerId": "",
+            "name": "INSERTAR",
+            "url": "localhost:3000/labApi/laboratory",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-03-25T00:50:00.907Z",
+            "modified": "2023-06-08T02:26:45.693Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"laboratory\": \"Sede sur Lab\",\n  \"status\": true\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ea4b6b1f-704b-409f-81cb-d11dc07cfa9f",
+            "colId": "e1763be0-4309-459d-b39e-e5ea5579718b",
+            "containerId": "",
+            "name": "MOSTRAR TODOS LOS DATOS",
+            "url": "localhost:3000/labApi/laboratory",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-03-25T00:50:15.320Z",
+            "modified": "2023-06-08T02:06:11.109Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8dfb48dc-88c0-4433-8c5a-38711a13eefe",
+            "colId": "e1763be0-4309-459d-b39e-e5ea5579718b",
+            "containerId": "",
+            "name": "BUSCAR POR ID",
+            "url": "localhost:3000/labApi/laboratory/4",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-03-25T00:50:23.338Z",
+            "modified": "2023-06-08T02:26:58.666Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0b73e136-1b11-4d90-b2e8-08fc4cbbe107",
+            "colId": "e1763be0-4309-459d-b39e-e5ea5579718b",
+            "containerId": "",
+            "name": "ACTUALIZAR",
+            "url": "localhost:3000/labApi/laboratory",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-03-25T00:50:30.645Z",
+            "modified": "2023-06-08T02:23:31.924Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"code\": 1,\n  \"laboratory\": \"Perú\",\n  \"status\": true\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "cb8512fc-111b-40b8-bd2c-18022fdab834",
+            "colId": "e1763be0-4309-459d-b39e-e5ea5579718b",
+            "containerId": "",
+            "name": "ELIMINAR",
+            "url": "localhost:3000/labApi/laboratory/1",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-03-25T00:50:38.851Z",
+            "modified": "2023-06-08T02:24:35.083Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

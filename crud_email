@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "CRUD_EMAILS",
+    "dateExported": "2023-06-16T13:19:27.763Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "09971494-d425-4565-b690-35694a447b12",
+            "colId": "0b0dfcac-ceca-4977-a783-844d76a4525f",
+            "containerId": "",
+            "name": "ACTUALIZAR",
+            "url": "localhost:3000/api/email",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2023-06-08T00:56:53.724Z",
+            "modified": "2023-06-08T00:56:53.724Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 2,\n  \"email\": \"PaulinaVT01@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9a04be3b-ad57-406f-b1f4-89c20a988617",
+            "colId": "0b0dfcac-ceca-4977-a783-844d76a4525f",
+            "containerId": "",
+            "name": "BUSCAR POR ID",
+            "url": "localhost:3000/api/email/3",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-06-08T00:57:03.006Z",
+            "modified": "2023-06-08T00:57:03.006Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "940b6e2d-4012-402c-a67a-5da03777d063",
+            "colId": "0b0dfcac-ceca-4977-a783-844d76a4525f",
+            "containerId": "",
+            "name": "MOSTRAR TODOS LOS DATOS",
+            "url": "localhost:3000/api/email",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-06-08T00:57:08.071Z",
+            "modified": "2023-06-08T00:57:08.071Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "18d20671-cbf1-4df7-a6ba-90cd1474399f",
+            "colId": "0b0dfcac-ceca-4977-a783-844d76a4525f",
+            "containerId": "",
+            "name": "INSERTAR",
+            "url": "localhost:3000/api/email",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-08T00:57:13.998Z",
+            "modified": "2023-06-08T00:57:13.998Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"Salome01@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4d7dd342-c03b-4b63-9e2f-d6af42b19e20",
+            "colId": "0b0dfcac-ceca-4977-a783-844d76a4525f",
+            "containerId": "",
+            "name": "ELIMINAR",
+            "url": "localhost:3000/api/email/1",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-06-08T00:57:20.535Z",
+            "modified": "2023-06-08T00:57:20.535Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

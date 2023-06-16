@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "pqrs",
+    "dateExported": "2023-06-16T13:19:45.739Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "dad4597a-3a40-4977-84b1-f5a396751798",
+            "colId": "8f5d5836-94f2-4518-baff-1dea22498960",
+            "containerId": "",
+            "name": "MOSTRAR TODOS LOS DATOS",
+            "url": "localhost:3000/PQRS/pqrs",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-16T13:17:50.679Z",
+            "modified": "2023-06-16T13:17:50.679Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "87949c92-d30a-4b5d-99f6-3c006eb6bd83",
+            "colId": "8f5d5836-94f2-4518-baff-1dea22498960",
+            "containerId": "",
+            "name": "INSERTAR",
+            "url": "localhost:3000/PQRS/pqrs",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-06-16T13:17:57.285Z",
+            "modified": "2023-06-16T13:17:57.285Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"cedula\": 1087656543,\n  \"nombre_completo\": \"Emanuel\",\n  \"descripcion\": \"Buen aseo\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "853d9757-1d80-4876-b4e3-b100493e7fae",
+            "colId": "8f5d5836-94f2-4518-baff-1dea22498960",
+            "containerId": "",
+            "name": "BUSCAR POR ID",
+            "url": "localhost:3000/api/email/3",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-06-16T13:18:04.595Z",
+            "modified": "2023-06-16T13:18:04.595Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f1921af3-9049-446a-8b4d-4ed3fce947a4",
+            "colId": "8f5d5836-94f2-4518-baff-1dea22498960",
+            "containerId": "",
+            "name": "ELIMINAR",
+            "url": "localhost:3000/api/email/1",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-06-16T13:18:11.852Z",
+            "modified": "2023-06-16T13:18:11.852Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4a0dac06-a950-4c86-a711-031d3d4195d3",
+            "colId": "8f5d5836-94f2-4518-baff-1dea22498960",
+            "containerId": "",
+            "name": "ACTUALIZAR",
+            "url": "localhost:3000/api/email",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-06-16T13:18:17.699Z",
+            "modified": "2023-06-16T13:18:17.699Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 2,\n  \"email\": \"PaulinaVT01@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
