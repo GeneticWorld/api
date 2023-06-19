@@ -27,10 +27,9 @@ export const findLaboratory = async(req, res) => {
 // INSERTAR INFORMACION
 export const insertLaboratory = async(req, res) => {
     const laboratory = req.body.laboratory;
-    const status = req.body.status;
     
     try {
-        const result = await pool.query(`CALL spInsertLaboratory('${laboratory}', ${status});`);
+        const result = await pool.query(`CALL spInsertLaboratory('${laboratory}');`);
         res.json(result);
     } catch (error) {
         console.error("Ha ocurrido un error" + error);
@@ -39,12 +38,11 @@ export const insertLaboratory = async(req, res) => {
 
 // ACTUALIZAR INFORMACION
 export const updateLaboratory = async(req, res) => {
-    const code = req.body.code;
+    const id = req.body.id;
     const laboratory = req.body.laboratory;
-    const status = req.body.status;
     
     try {
-        const result = await pool.query(`CALL spUpdateLaboratory(${code}, '${laboratory}', ${status});`
+        const result = await pool.query(`CALL spUpdateLaboratory(${id}, '${laboratory}');`
             );
         if(result[0].affectedRows != 0)
             res.json(result);
