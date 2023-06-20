@@ -11,7 +11,7 @@ route.get("/", (req, res) => {
 route.get("/pqrs", controller.findAllPQRS);
 
 // MUESTRA SOLO 1 REGISTRO
-route.get("/pqrs/:id", controller.findPQRS);
+route.get("/pqrs/:cedula", controller.findPQRS);
 
 // INSERTA INFO
 route.post("/pqrs", controller.insertPQRS);
@@ -20,6 +20,6 @@ route.post("/pqrs", controller.insertPQRS);
 route.put("/pqrs", controller.updatePQRS);
 
 // ELIMINAR INFORMACION
-route.delete("/pqrs/:id", controller.deletePQRS);
+route.delete("/pqrs/:cedula", controller.deletePQRS);
 
 export default route;
