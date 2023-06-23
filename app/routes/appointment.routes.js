@@ -10,16 +10,13 @@ routeAppointment.get("/", (req, res) => {
 // MUESTRA TODOS LOS REGISTROS
 routeAppointment.get("/viewAppointment", controller.findAllAppointment);
 
-// MUESTRA SOLO 1 REGISTRO
-routeAppointment.get("/email/:id", controller.findEmail);
-
 // INSERTA INFO
-routeAppointment.post("/email", controller.insertEmail);
+routeAppointment.post("/saveAppointment", controller.insertAppointment);
 
 // ACTUALIZAR INFORMACION
-routeAppointment.put("/email", controller.updateEmail);
+routeAppointment.put("/upAppointment", controller.updateAppointment);
 
 // ELIMINAR INFORMACION
-routeAppointment.delete("/email/:id", controller.deleteEmail);
+routeAppointment.delete("/deleAppointment/:id", controller.deleteAppointment);
 
 export default routeAppointment;

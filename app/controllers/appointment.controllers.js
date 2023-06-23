@@ -23,11 +23,20 @@ export const findEmail = async(req, res) => {
 };
 
 // INSERTAR INFORMACION
-export const insertEmail = async(req, res) => {
-    const email = req.body.email;
+export const insertAppointment = async(req, res) => {
+    const cedula = req.body.cedula;
+    const nombre = req.body.nombre;
+    const apellido = req.body.apellido;
+    const telefono = req.body.telefono;
+    const direccion = req.body.direccion;
+    const correo = req.body.correo;
+    const idLab = req.body.idLab;
+    const fecha = req.body.fecha;
+    const horaCita = req.body.horaCita;
+    const costoCita = req.body.costoCita;
     
     try {
-        const result = await pool.query(`CALL spInsertEmail('${email}');`);
+        const result = await pool.query(`CALL spInsertAppointment(${cedula}, '${nombre}', '${apellido}', '${telefono}', '${direccion}', '${correo}', ${idLab}, '${fecha}', '${horaCita}', '${costoCita}');`);
         res.json(result);
     } catch (error) {
         console.error("Ha ocurrido un error" + error);
@@ -35,12 +44,21 @@ export const insertEmail = async(req, res) => {
 };
 
 // ACTUALIZAR INFORMACION
-export const updateEmail = async(req, res) => {
+export const updateAppointment = async(req, res) => {
     const id = req.body.id;
-    const email = req.body.email;
+    const cedula = req.body.cedula;
+    const nombre = req.body.nombre;
+    const apellido = req.body.apellido;
+    const telefono = req.body.telefono;
+    const direccion = req.body.direccion;
+    const correo = req.body.correo;
+    const idLab = req.body.idLab;
+    const fecha = req.body.fecha;
+    const horaCita = req.body.horaCita;
+    const costoCita = req.body.costoCita;
     
     try {
-        const result = await pool.query(`CALL spUpdateEmail(${id}, '${email}');`
+        const result = await pool.query(`CALL spUpdateAppointment(${id}, ${cedula}, '${nombre}', '${apellido}', '${telefono}', '${direccion}', '${correo}', ${idLab}, '${fecha}', '${horaCita}', '${costoCita}');`
             );
         if(result[0].affectedRows != 0)
             res.json(result);
@@ -51,10 +69,10 @@ export const updateEmail = async(req, res) => {
     }
 };
 
-export const deleteEmail = async(req, res) => {
+export const deleteAppointment = async(req, res) => {
     const id = req.params.id;
     try {
-        const result = await pool.query(`CALL spDeleteEmail(${id});`)
+        const result = await pool.query(`CALL spDeleteAppointment(${id});`)
         if (result[0].affectedRows == 1) 
             res.json(result);
         else
