@@ -62,7 +62,7 @@ export const deletePQRS = async(req, res) => {
 
     try {
         const result = await pool.query(`CALL spDeletePQRS(${id});`);
-        if (result[0].affectedRows === 1) 
+        if (result[0].affectedRows == 1) 
             res.json(result);
         else
             res.json({"ERROR": "NO BORRÓ"});   
