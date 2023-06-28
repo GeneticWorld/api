@@ -1,4 +1,5 @@
-import { pool } from "../config/dataBase/db.js"
+// Modulo
+import { pool } from "../config/dataBase/db.js";
 
 // MOSTRAR TODOS LOS DATOS
 export const findAllLaboratory = async(req, res) => {
@@ -6,9 +7,8 @@ export const findAllLaboratory = async(req, res) => {
         const [rows] = await pool.query("CALL spFindAllLaboratory()");
         res.json(rows);
     } catch (error) {
-        console.error("Ha ocurrido un error");
-        console.log(error);
-    }
+        console.error("Ha ocurrido un error: " + error);
+    };
 };
 
 // MOSTRAR LOS DATOS SEGUN SU ID
@@ -19,12 +19,11 @@ export const findLaboratory = async(req, res) => {
         const [rows] = await pool.query(`CALL spFindLaboratory(${id})`);
         res.json(rows);
     } catch (error) {
-        console.error("Ha ocurrido un error");
-        console.log(error);
-    }
+        console.error("Ha ocurrido un error: " + error);
+    };
 };
 
-// INSERTAR INFORMACION
+// INSERTAR INFORMACIÓN
 export const insertLaboratory = async(req, res) => {
     const laboratory = req.body.laboratory;
     
@@ -32,11 +31,11 @@ export const insertLaboratory = async(req, res) => {
         const result = await pool.query(`CALL spInsertLaboratory('${laboratory}');`);
         res.json(result);
     } catch (error) {
-        console.error("Ha ocurrido un error" + error);
-    }
+        console.error("Ha ocurrido un error: " + error);
+    };
 };
 
-// ACTUALIZAR INFORMACION
+// ACTUALIZAR INFORMACIÓN
 export const updateLaboratory = async(req, res) => {
     const id = req.body.id;
     const laboratory = req.body.laboratory;
@@ -47,22 +46,23 @@ export const updateLaboratory = async(req, res) => {
         if(result[0].affectedRows != 0)
             res.json(result);
         else
-            res.json({"rs": "ERROR"})
+            res.json({"rs": "ERROR"});
     } catch (error) {
-        console.error("Ha ocurrido un error" + error);
-    }
+        console.error("Ha ocurrido un error: " + error);
+    };
 };
 
+// ELIMINA INFORMACIÓN
 export const deleteLaboratory = async(req, res) => {
     const id = req.params.id;
+
     try {
-        const result = await pool.query(`CALL spDeleteLaboratory(${id});`)
-        if (result[0].affectedRows == 1) 
+        const result = await pool.query(`CALL spDeleteLaboratory(${id});`);
+        if (result[0].affectedRows === 1) 
             res.json(result);
         else
-            res.json({"ERROR": "NO BORRÓ"})    
-        
+            res.json({"ERROR": "NO BORRÓ"});
     } catch (error) {
-        console.error(error);
-    }
+        console.error("Ha ocurrido un error: " + error);
+    };
 };

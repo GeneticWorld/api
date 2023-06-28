@@ -1,11 +1,8 @@
+// Modulos
 import { Router } from "express";
 import * as controller from "../controllers/email.controllers";
 
 const route = Router();
-
-route.get("/", (req, res) => {
-    res.send(`<h1>Hola Mundo<h1>`);
-});
 
 // MUESTRA TODOS LOS REGISTROS
 route.get("/email", controller.findAllEmail);
@@ -13,13 +10,13 @@ route.get("/email", controller.findAllEmail);
 // MUESTRA SOLO 1 REGISTRO
 route.get("/email/:id", controller.findEmail);
 
-// INSERTA INFO
+// INSERTA INFORMACIÓN
 route.post("/email", controller.insertEmail);
 
-// ACTUALIZAR INFORMACION
+// ACTUALIZA INFORMACIÓN
 route.put("/email", controller.updateEmail);
 
-// ELIMINAR INFORMACION
+// ELIMINA INFORMACIÓN
 route.delete("/email/:id", controller.deleteEmail);
 
 export default route;

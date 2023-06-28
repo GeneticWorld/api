@@ -1,5 +1,7 @@
+// Modulo
 import colors from "colors";
 
+// Colores en consola
 const message = (message, type) => {
     switch (type) {
         case "danger":
@@ -14,7 +16,7 @@ const message = (message, type) => {
         default:
             console.log(message.bgWhite);
             break;
-    }
-}
+    };
+};
 
 export default message;

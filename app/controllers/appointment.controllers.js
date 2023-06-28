@@ -1,4 +1,5 @@
-import { pool } from "../config/dataBase/db.js"
+// Modulo
+import { pool } from "../config/dataBase/db.js";
 
 // MOSTRAR TODOS LOS DATOS
 export const findAllAppointment = async(req, res) => {
@@ -8,7 +9,7 @@ export const findAllAppointment = async(req, res) => {
     } catch (error) {
         console.error("Ha ocurrido un error");
         console.log(error);
-    }
+    };
 };
 
 // MOSTRAR LOS DATOS SEGUN SU ID
@@ -19,10 +20,10 @@ export const findEmail = async(req, res) => {
         res.json(rows);
     } catch (error) {
         console.error("Ha ocurrido un error");
-    }
+    };
 };
 
-// INSERTAR INFORMACION
+// INSERTAR INFORMACIÓN
 export const insertAppointment = async(req, res) => {
     const cedula = req.body.cedula;
     const nombre = req.body.nombre;
@@ -40,10 +41,10 @@ export const insertAppointment = async(req, res) => {
         res.json(result);
     } catch (error) {
         console.error("Ha ocurrido un error" + error);
-    }
+    };
 };
 
-// ACTUALIZAR INFORMACION
+// ACTUALIZAR INFORMACIÓN
 export const updateAppointment = async(req, res) => {
     const id = req.body.id;
     const cedula = req.body.cedula;
@@ -66,19 +67,19 @@ export const updateAppointment = async(req, res) => {
             res.json({"rs": "ERROR"})
     } catch (error) {
         console.error("Ha ocurrido un error" + error);
-    }
+    };
 };
 
+// ELIMINA INFORMACIÓN
 export const deleteAppointment = async(req, res) => {
     const id = req.params.id;
     try {
-        const result = await pool.query(`CALL spDeleteAppointment(${id});`)
-        if (result[0].affectedRows == 1) 
+        const result = await pool.query(`CALL spDeleteAppointment(${id});`);
+        if (result[0].affectedRows === 1)
             res.json(result);
         else
-            res.json({"ERROR": "NO BORRÓ"})    
-        
+            res.json({"ERROR": "NO BORRÓ"});        
     } catch (error) {
         console.error(error);
-    }
+    };
 };

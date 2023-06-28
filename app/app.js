@@ -1,3 +1,4 @@
+// Modulos
 import express from "express";
 import message from "./config/message.js";
 import enviroment from "./config/enviroments";
@@ -9,8 +10,10 @@ import allRoutesAppointment from "./routes/appointment.routes.js";
 
 const app = express();
 
+// Se establece el puerto
 app.set("PORT", process.env.PORT || 3000);
 
+// Rutas
 app.use(express.json());
 app.use('/api',allRoutes);
 app.use('/labApi', allRoutesLaboratory);

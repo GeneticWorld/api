@@ -1,11 +1,8 @@
+//Modulos
 import { Router } from "express";
 import * as controller from "../controllers/laboratory.controllers";
 
 const route = Router();
-
-route.get("/", (req, res) => {
-    res.send(`<h1>Hola Mundo<h1>`);
-});
 
 // MUESTRA TODOS LOS REGISTROS
 route.get("/laboratory", controller.findAllLaboratory);
@@ -13,13 +10,13 @@ route.get("/laboratory", controller.findAllLaboratory);
 // MUESTRA SOLO 1 REGISTRO
 route.get("/laboratory/:id", controller.findLaboratory);
 
-// INSERTA INFO
+// INSERTA INFORMACIÓN
 route.post("/laboratory", controller.insertLaboratory);
 
-// ACTUALIZAR INFORMACION
+// ACTUALIZA INFORMACIÓN
 route.put("/laboratory", controller.updateLaboratory);
 
-// ELIMINAR INFORMACION
+// ELIMINA INFORMACIÓN
 route.delete("/laboratory/:id", controller.deleteLaboratory);
 
 export default route;
